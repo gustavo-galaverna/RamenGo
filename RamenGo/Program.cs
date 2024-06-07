@@ -1,12 +1,11 @@
 using System.Reflection;
-using Microsoft.EntityFrameworkCore;
 using RamenGo.Data;
 using RamenGo.Tools;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddNewtonsoftJson();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c => 
@@ -19,6 +18,15 @@ builder.Services.AddSingleton<ApiKeyAuthorizationFilter>();
 builder.Services.AddSingleton<IApiKeyValidator, ApiKeyValidator>();
 builder.Services.AddDbContext<RamenGoDbContext>();
 builder.Services.AddScoped();
+builder.Services.AddCors(options => 
+    options.AddPolicy(
+        "AllowAll", 
+        b=> b.AllowAnyOrigin()
+             .AllowAnyHeader()
+             .AllowAnyMethod()
+    )
+);
+
 
 var app = builder.Build();
 
@@ -27,11 +35,14 @@ if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}else
+{
+    app.UseHsts();
+
 }
 
 app.UseHttpsRedirection();
-
 app.UseAuthorization();
-
+app.UseCors("AllowAll");
 app.MapControllers();
 app.Run();

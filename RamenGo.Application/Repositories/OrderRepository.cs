@@ -23,8 +23,8 @@ namespace RamenGo.Application.Repositories
         {
             try
             {
-                Broth? broth = await _brothRepository.GetByIdAsync(brothId);
-                Protein? protein = await _proteinRepository.GetByIdAsync(proteinId);
+                Broth broth = await _brothRepository.GetByIdAsync(brothId);
+                Protein protein = await _proteinRepository.GetByIdAsync(proteinId);
                 Dictionary<string, string> responseDictionary;
                 string orderId;
 

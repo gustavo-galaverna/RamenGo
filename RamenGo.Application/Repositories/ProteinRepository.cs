@@ -14,7 +14,7 @@ namespace RamenGo.Application.Repositories
             return await _ramenGoDbContext.Proteins.ToListAsync();
         }
 
-        public async Task<Protein?> GetByIdAsync(string id)
+        public async Task<Protein> GetByIdAsync(string id)
         {
             return await _ramenGoDbContext.Proteins.FirstOrDefaultAsync(b => b.Id == id); 
         }

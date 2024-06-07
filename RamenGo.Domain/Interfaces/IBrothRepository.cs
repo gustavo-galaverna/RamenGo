@@ -6,7 +6,7 @@ namespace RamenGo.Domain.Interfaces
      public interface IBrothRepository
      {
         Task<IEnumerable<Broth>> GetAsync(); 
-        Task<Broth?> GetByIdAsync(string id); 
+        Task<Broth> GetByIdAsync(string id); 
 
      }
 

@@ -14,7 +14,7 @@ namespace RamenGo.Application.Repositories
             return await _ramenGoDbContext.Broths.ToListAsync();
         }
 
-        public async Task<Broth?> GetByIdAsync(string id)
+        public async Task<Broth> GetByIdAsync(string id)
         {
             return await _ramenGoDbContext.Broths.FirstOrDefaultAsync(b => b.Id == id);
         }
