@@ -21,6 +21,8 @@
 
 Detalhes da API: 
 ----------------------------------------------------------------------------------------------------------
+Link da API hospedada: https://ramengo-c5c51aa6b5c5.herokuapp.com/
+
 Autenticação: para fazer qualquer requisição é necessário enviar no header da requisição:
 ```
 X-API-Key: ZtVdh8XQ2U8pWI2gmZ7f796Vh8GllXoN7mr0djNf
