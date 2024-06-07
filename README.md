@@ -115,22 +115,23 @@ Exemplo:
 ```
 ----------------------------------------------------------------------------------------------------------
 <code>POST: /order - realiza um pedido.</code>
-Observações:
-1. Este endpoint foi feito diferente da documentação pois a aplicação client-side faz uma requisição para esta rota.
-2. O código deste endpoint teve de ser adaptado para receber requisições sem o content-type: application/json no header, seguindo a requisição feita no lado do cliente.
+> [!NOTE]
+>1. Este endpoint foi feito diferente da documentação pois a aplicação client-side faz uma requisição para esta rota.
+>2. O código deste endpoint teve de ser adaptado para receber requisições sem o content-type: application/json no header, seguindo a requisição feita no lado do cliente.
 Corpo experado:
 ```
 OrderRequest
 {
-  "brothId": string,
-  "proteinId": string
+  "brothId"   : string,
+  "proteinId" : string
 }
 ```
 Content type de retorno: application/json
 Possíveis status retornados:
 201: Retorna um OrderResponse
 ```
-OrderResponse: {
+OrderResponse:
+{
   "id": "string",
   "description": "string",
   "image": "string"
@@ -147,7 +148,8 @@ Exemplo:
 
 400: Retorna um ErrorResponse
 ```
-ErrorResponse: {
+ErrorResponse:
+{
        error:	string
 }
 ```
@@ -159,7 +161,8 @@ Exemplo:
 ```
 403: Retorna um ErrorResponse: 
 ```
-ErrorResponse: {
+ErrorResponse:
+{
        error:	string
 }
 ```
@@ -172,7 +175,8 @@ Exemplo:
 
 500: Retorna um ErrorResponse: 
 ```
-ErrorResponse: {
+ErrorResponse:
+{
        error:	string
 }
 ```
