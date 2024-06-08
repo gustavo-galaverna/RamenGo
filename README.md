@@ -129,6 +129,7 @@ OrderRequest
 }
 ```
 Content type de retorno: application/json
+
 Possíveis status retornados:
 201: Retorna um OrderResponse
 ```
