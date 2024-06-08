@@ -2,8 +2,6 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 WORKDIR /app
 # EXPOSE 80
 
-RUN apt update &&\
-         apt install -y libc6 libicu-dev libfontconfig1
 
 ENV ASPNETCORE_URLS=http://+:80
 
